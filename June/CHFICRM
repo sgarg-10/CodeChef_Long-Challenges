@@ -1,0 +1,68 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    try{
+		 Scanner s=new Scanner(System.in);
+    int t=s.nextInt();
+   
+    for(int i=0;i<t;i++){
+         String c="";
+       int n=s.nextInt();
+       int[] a=new int[n];
+       for(int j=0;j<n;j++){
+           a[j]=s.nextInt();
+       }
+       
+       int sum=5;
+       int diff=0;
+       
+       if(a[0]!=5){
+           c="NO";
+           System.out.println("NO");
+           
+       }
+       else{
+           for(int j=1;j<n;j++){
+               
+               diff=a[j]-5;
+               if(sum>=diff)
+               {
+                   sum=sum-diff;
+                   if(a[j]==5){
+                       sum=sum+a[j];
+                   }
+               }
+               else
+               {
+                    c="NO";
+                    System.out.println("NO");
+                    break;
+                    
+                    
+               }
+               
+           }
+           
+       }
+       
+       
+       if(c!="NO" && sum>=0){
+           System.out.println("YES");
+           
+       }
+       continue;
+    
+    }}catch(Exception e){
+        return;
+    }
+		 
+	}
+}
